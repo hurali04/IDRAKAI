@@ -1,6 +1,0 @@
-principle = float(input("Enter principle: "))
-rate = float(input("Enter rate: "))
-time = int(input("Enter time: "))
-time_in_years = float(input("Time in Years: "))
-Compound_Interest = principle*((1+(rate/time)) ** (time*time_in_years))
-print("Compound Interest will be: ", Compound_Interest)

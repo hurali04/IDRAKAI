@@ -1,2 +1,0 @@
-# IDRAKAI
-Internship related tasks
