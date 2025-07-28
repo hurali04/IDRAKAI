@@ -1,0 +1,4 @@
+Hello world!
+Welcome to Python file handling.
+Python is easy and powerful.
+Hello again!
