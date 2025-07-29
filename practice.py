@@ -1,25 +1,21 @@
-import time
+import pandas as pd
+import matplotlib.pyplot as plt
 
-def execution_time(func):
-    def wrapper(*args, **kwargs):
-        start_time = time.time()
-        result = func(*args, **kwargs)
-        end_time = time.time()
-        print(f"Execution Time of '{func.__name__}': {end_time - start_time:.4f} seconds")
-        return result
-    return wrapper
-def log_calls(func):
-    def wrapper(*args, **kwargs):
-        print(f"Calling function: {func.__name__}")
-        print(f"Arguments: args={args}, kwargs={kwargs}")
-        result = func(*args, **kwargs)
-        print(f"Return value: {result}")
-        return result
-    return wrapper
-@log_calls
-@execution_time
-def multiply(a, b):
-    time.sleep(1)  # simulate delay
-    return a * b
+# Sample DataFrame
+data = {
+    'Age': [22, 45, 30, 35, 28, 40, 25, None, 32, 38],
+    'Class': ['First', 'Second', 'Third', 'First', 'Second', 'Third', 'First', 'Second', 'Third', 'First']
+}
+df = pd.DataFrame(data)
 
-multiply(5, 10)
+# Histogram of numerical column (Age)
+df['Age'].plot(kind='hist', bins=5, edgecolor='black', title='Age Distribution')
+plt.xlabel('Age')
+plt.ylabel('Frequency')
+plt.show()
+
+# Bar chart of categorical counts (Class)
+df['Class'].value_counts().plot(kind='bar', color='skyblue', edgecolor='black', title='Passenger Class Counts')
+plt.xlabel('Class')
+plt.ylabel('Count')
+plt.show()
