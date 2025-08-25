@@ -10,20 +10,13 @@ with open("Advanced_File_Handling.txt",'r')as file:
     print("Lines:", count_lines)
     print("Words:", count_words)
     print("Characters:", char_count)
-
-# Step 2: Split text into words
-words = text.lower().split()  # .lower() makes it case-insensitive
-
-# Step 3: Count each word
+words = text.lower().split() 
 word_count = {}
-
 for word in words:
     word = word.strip(".,!?")  # remove punctuation
     if word in word_count:
         word_count[word] += 1
     else:
         word_count[word] = 1
-
-# Step 4: Find the most frequent word
 most_frequent = max(word_count, key=word_count.get)
 print(f"Most frequent word: '{most_frequent}' ({word_count[most_frequent]} times)")
